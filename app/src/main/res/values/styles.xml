@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NavigationViewRHD" parent="@style/Widget.Material3.NavigationView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="itemPaddingTop">5dp</item>
+        <item name="itemPaddingBottom">5dp</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="elevation">10dp</item>
+    </style>
+    <style name="ToolbarRHD" parent="Widget.Material3.Toolbar">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="colorSurface">@color/principal</item>
+        <item name="colorOnSurface">@color/white</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Toolbar" parent="">
+        <item name="colorSurface">@color/principal</item>
+        <item name="colorOnSurface">@color/white</item>
+    </style>
+
+    <style name="TextTitleRHD">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">@color/mBlack</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+    <style name="TextSubtitleRHD">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/mBlack</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+    <style name="TextHeaderRHD">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/mBlack</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextBodyRHD">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/mBlack</item>
+    </style>
+    <style name="ButtonRHD" parent="Widget.Material3.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/principal</item>
+        <item name="cornerRadius">5dp</item>
+    </style>
+    <style name="ButtonRHDGray" parent="Widget.Material3.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="backgroundTint">@color/light_gray</item>
+        <item name="cornerRadius">5dp</item>
+    </style>
+    <style name="ButtonOutlineRHD" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:textColor">@color/principal</item>
+        <item name="strokeColor">@color/principal</item>
+        <item name="cornerRadius">5dp</item>
+    </style>
+    <style name="ButtonDialogRHD" parent="Widget.Material3.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/principal</item>
+        <item name="cornerRadius">5dp</item>
+    </style>
+    <style name="ButtonDialogPositiveRHD" parent="Widget.Material3.Button.TextButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/principal</item>
+    </style>
+    <style name="Icon_Tint" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Icon">
+        <item name="android:tint">@color/principal</item>
+    </style>
+    <style name="ButtonTextRHD" parent="Widget.Material3.Button.TextButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textColor">@color/principal</item>
+    </style>
+    <style name="ButtonTextDialogRHD" parent="Widget.Material3.Button.TextButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/principal</item>
+    </style>
+    <style name="InputLayoutRHD" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="hintTextColor">@color/principal</item>
+    </style>
+    <style name="InputLayoutSpinnerRHD" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="hintTextColor">@color/principal</item>
+    </style>
+    <style name="ItemActived">
+        <item name="itemIconTint">@color/principal</item>
+    </style>
+    <style name="MonthPickerDialogStyle" parent="ThemeOverlay.Material3.MaterialCalendar">
+        <item name="monthBgColor">@color/white</item>
+        <item name="monthBgSelectedColor">@color/principal</item>
+        <item name="monthFontColorSelected">@color/white</item>
+        <item name="monthFontColorNormal">@color/principal</item>
+        <item name="monthFontColorDisabled">@color/light_gray</item>
+        <item name="headerBgColor">@color/white</item>
+        <item name="headerFontColorSelected">@color/black</item>
+        <item name="headerFontColorNormal">@color/black</item>
+        <item name="headerTitleColor">@color/principal</item>
+        <item name="cornerRadius">20dp</item>
+        <item name="dialogActionButtonColor">@color/principal</item>
+    </style>
+    <style name="AlertDialogCustom" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="buttonBarPositiveButtonStyle">@style/ButtonDialogRHD</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/TextSubtitleRHD</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/TextBodyRHD</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/white</item>
+        <item name="radioButtonStyle">@color/principal</item>
+    </style>
+    <style name="DialogCalendarRHD" parent="@style/ThemeOverlay.Material3.MaterialCalendar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="backgroundTint">@color/principal</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/TextSubtitleRHD</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/TextBodyRHD</item>
+        <item name="buttonBarPositiveButtonStyle">@style/ButtonDialogPositiveRHD</item>
+        <item name="buttonBarNegativeButtonStyle">@style/ButtonDialogPositiveRHD</item>
+    </style>
+    <style name="AlertDialogCustomList" parent="@style/ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="buttonBarPositiveButtonStyle">@style/ButtonDialogPositiveRHD</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/TextSubtitleRHD</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/TextBodyRHD</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/white</item>
+        <item name="radioButtonStyle">@color/principal</item>
+    </style>
+    <style name="PositiveButtonStyle" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="backgroundTint">@color/principal</item>
+    </style>
+    <style name="WhiteAccent" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorAccent">@android:color/white</item>
+    </style>
+    <style name="DialogTitleStyle">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:layout_marginTop">40dp</item>
+        <item name="android:textColor">@color/mBlack</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="DialogMessageStyle">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:layout_marginTop">25dp</item>
+        <item name="android:layout_marginRight">25dp</item>
+        <item name="android:layout_marginLeft">25dp</item>
+        <item name="android:textColor">@color/mBlack</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="DialogOkButtonStyle">
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:background">@drawable/shape_ok_button_dialog</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="DialogLeftBorderOkButtonStyle">
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:background">@drawable/shape_ok_left_border_button_dialog</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="DialogNegativeButtonStyle">
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/mTurqoise</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:background">@drawable/shape_no_button_dialog</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="CardViewRHD" parent="Widget.Material3.CardView.Elevated">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="cardCornerRadius">0dp</item>
+
+    </style><style name="ListaSolicitudesCardViewRHD" parent="Widget.Material3.CardView.Elevated">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="cardCornerRadius">10dp</item>
+        <item name="cardElevation">3dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="android:layout_margin">1dp</item>
+    </style>
+</resources>

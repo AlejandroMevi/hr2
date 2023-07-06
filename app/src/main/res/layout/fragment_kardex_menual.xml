@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondovacaciones"
+    tools:context=".uiFragment.controlDeAusentismos.KardexMensual.ui.KardexMensualFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="726dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/idtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center|start"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:text="12345678" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtNombre"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:text="Alejandro Mejia" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDias2">
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@color/letraD"
+                android:gravity="center"
+                android:text="D"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtFactor" />
+
+            <TextView
+                android:id="@+id/textviewDescansos1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                android:text="@string/kmDescansos"
+                app:layout_constraintStart_toEndOf="@+id/textView7"
+                app:layout_constraintTop_toBottomOf="@+id/txtFactor"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="5dp"
+                android:background="@color/letrasF"
+                android:gravity="center"
+                android:text="F"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                app:layout_constraintStart_toEndOf="@+id/textviewDescansos"
+                app:layout_constraintTop_toBottomOf="@+id/txtFactor" />
+
+            <TextView
+                android:id="@+id/textviewFestivos1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:gravity="center|start"
+                android:text="@string/kmFestivos"
+                app:layout_constraintStart_toEndOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/txtFactor"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="5dp"
+                android:background="@color/letrasA"
+                android:gravity="center"
+                android:text="A"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                app:layout_constraintStart_toEndOf="@+id/textviewFestivos"
+                app:layout_constraintTop_toBottomOf="@+id/txtFactor" />
+
+            <TextView
+                android:id="@+id/textviewAusentismos1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                android:text="@string/kmAusentismos"
+                app:layout_constraintStart_toEndOf="@+id/textView9"
+                app:layout_constraintTop_toBottomOf="@+id/txtFactor"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginTop="20dp">
+
+            <include
+                android:id="@+id/titlesContainer"
+                layout="@layout/calendar_day_title_text" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.kizitonwose.calendar.view.CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                app:cv_dayViewResource="@layout/calendar_day_layout"
+                app:cv_monthHeaderResource="@layout/calendar_day_titles_container"
+                app:cv_orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</FrameLayout>

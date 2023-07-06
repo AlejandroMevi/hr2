@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:animateLayoutChanges="true">
+
+    <TextView
+        android:id="@+id/welcomeName"
+        style="@style/TextSubtitleRHD"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Supervisor"
+        app:layout_constraintEnd_toStartOf="@+id/btn_refresh"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/welcomeEstadistica"
+        style="@style/TextHeaderRHD"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/principal"
+        android:layout_marginTop="5dp"
+        android:text="@string/welcome_est"
+        app:layout_constraintEnd_toStartOf="@+id/btn_refresh"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeName" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_refresh"
+        style="?attr/floatingActionButtonSmallStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/example_3_today_bg"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ic_refresh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/chartBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeEstadistica">
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/graficChard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toTopOf="@+id/guideline10">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/leftArrow"
+            style="@style/Widget.Material3.Button.IconButton.Outlined"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:icon="@drawable/ic_arrow_left"
+            app:iconGravity="textStart"
+            app:strokeColor="@color/principal" />
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/kardexTv"
+            style="@style/TextHeaderRHD"
+            android:textColor="@color/principal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="0dp"
+            android:text="@string/kardex_title"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/rightArrow"
+            style="@style/Widget.Material3.Button.IconButton.Outlined"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:icon="@drawable/ic_arrow_right"
+            app:iconGravity="textStart"
+            app:strokeColor="@color/principal" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/ll_header">
+
+        <TextView
+            android:id="@+id/encabezadoTvDays"
+            style="@style/TextSubtitleRHD"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="0dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="@string/encabezado_days" />
+
+        <HorizontalScrollView
+            android:id="@+id/hs_days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+
+                <TextView
+                    android:id="@+id/dayOne"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayTwo"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayThree"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayFour"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayFive"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/daySix"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/daySeven"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="7"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayEight"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayNine"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="9"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayTen"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="10"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayEleven"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="11"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayTwelve"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="12"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayThirteen"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="13"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayFourteen"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="14"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayFiveteen"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="15"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/daySixteen"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="16"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/daySeventeen"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="17"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayEighteen"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="18"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayNineteen"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="19"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayTwenty"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="20"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayTwentyOne"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="21"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayTwentyTwo"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="22"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayTwentyThree"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="23"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayTwentyFour"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="24"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayTwentyFive"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="25"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayTwentySix"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="26"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayTwentySeven"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="27"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayTwentyEight"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="28"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayTwentyNine"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="29"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayThirty"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="30"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayThirtyOne"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="#DDDDDD"
+                    android:gravity="center"
+                    android:text="31"
+                    android:textColor="@color/principal"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <TextView
+        android:id="@+id/txtMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:gravity="center"
+        android:text="@string/welcome_kardexSN"
+        android:textAlignment="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat4" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat4">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listViewLeft"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:overScrollMode="never"
+                tools:listitem="@layout/list_item_left" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalEncabezado"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:layout_weight="1">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    tools:listitem="@layout/list_item" />
+
+            </HorizontalScrollView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

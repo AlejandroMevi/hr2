@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_num_employee"
+        style="@style/TextHeaderRHD"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="1234567890"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_name_employee"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/TextHeaderRHD"
+        android:id="@+id/tv_name_employee"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Nombre del empleado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_date"
+        style="@style/TextHeaderRHD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Fecha: 02-03-2023"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_employee" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_concept"
+        style="@style/TextHeaderRHD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Concepto: Horas Laborales"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_turn"
+        style="@style/TextHeaderRHD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Turno: Tres"
+        app:layout_constraintTop_toBottomOf="@+id/tv_concept" />
+
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/TextHeaderRHD"
+        android:id="@+id/tv_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Entrada"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/principal"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_turn" />
+
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/TextBodyRHD"
+        android:id="@+id/tv_input_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="09:00"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_input" />
+
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/TextHeaderRHD"
+        android:id="@+id/tv_output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salida"
+        android:textColor="@color/principal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/tv_input" />
+
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/TextBodyRHD"
+        android:id="@+id/tv_output_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="18:00"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_output" />
+
+    <include
+        android:id="@+id/sp_station"
+        layout="@layout/general_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_output_text" />
+
+    <include
+        android:id="@+id/sp_status"
+        layout="@layout/general_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/sp_station" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_acept"
+        style="@style/ButtonRHD"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

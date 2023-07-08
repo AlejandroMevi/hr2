@@ -192,7 +192,16 @@ class CalendarioCustom {
         }
         return mes
     }
-
+    fun aMarcasOthers(fechas: ArrayList<String>, marcas: ArrayList<String>): ArrayList<String> {
+        val marcasOthers = ArrayList<String>()
+        for (i in fechas.indices) {
+            if (marcas[i] != "A" && marcas[i] != "V" && marcas[i] != "R" && marcas[i] != "F" && marcas[i] != "®") {
+                val string = marcas[i]
+                marcasOthers.add(string)
+            }
+        }
+        return marcasOthers
+    }
     fun pintaVacaciones(calendarDayText: TextView, context: Context) {
         calendarDayText.text = "V"
         calendarDayText.setTextColor(context.getColor(R.color.black))
@@ -205,13 +214,10 @@ class CalendarioCustom {
 
     @SuppressLint("SetTextI18n")
     fun pintaOthers(calendarDayText: TextView, requireContext: Context, kardexMensualOthers: List<CustomDay>) {
-        calendarDayText.text = "Others"
-        calendarDayText.setBackgroundColor(
-            requireContext.getColorCompat(
-                kardexMensualOthers[0].color
-            )
-        )
-        calendarDayText.setTextColor(requireContext.getColor(R.color.letraOthers))
+        for(i in kardexMensualOthers.indices){
+            calendarDayText.text = kardexMensualOthers[0].marca
+            calendarDayText.setTextColor(requireContext.getColor(R.color.black))
+        }
     }
     @SuppressLint("SetTextI18n")
     fun pintaDescansos(calendarDayText: TextView, requireContext: Context, descansos: List<CustomDay>) {

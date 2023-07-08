@@ -173,10 +173,11 @@ class KardexMensualFragment : Fragment() {
         val mesOthers = caC.aMesesOthers(fechas, marcas)
         val diaFaltas = caC.aDiaFaltas(fechas, marcas)
         val mesFaltas = caC.aMesesFaltas(fechas, marcas)
+        val marcasOthers = caC.aMarcasOthers(fechas, marcas)
         if (diaVaciones.isNotEmpty()) g.generateVacaciones(diaVaciones, mesVacaciones)
         if (diaAusentismos.isNotEmpty()) g.generateAusentismos(diaAusentismos, mesAusentismos)
         if (diaRetardos.isNotEmpty()) g.generateRetardos(diaRetardos, mesRetardos)
-        if (diaOthers.isNotEmpty()) g.generateOthers(diaOthers, mesOthers)
+        if (diaOthers.isNotEmpty()) g.generateOthersPruebas(diaOthers, mesOthers, marcasOthers)
         if (diaFaltas.isNotEmpty()) g.generateFaltas(diaFaltas, mesFaltas)
 
         kardexMensualVacaciones =
@@ -198,8 +199,8 @@ class KardexMensualFragment : Fragment() {
                 g.listaKardex(diaFaltas), g.listaKardexMeses(mesFaltas)
             ).groupBy { it.time.toLocalDate() }
         kardexMensualOthers =
-            g.generateOthers(
-                g.listaKardex(diaOthers), g.listaKardexMeses(mesOthers)
+            g.generateOthersPruebas(
+                g.listaKardex(diaOthers), g.listaKardexMeses(mesOthers), g.listaKardexMarcas(marcasOthers)
             ).groupBy { it.time.toLocalDate() }
 
     }
